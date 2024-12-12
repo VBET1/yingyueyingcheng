@@ -1,0 +1,55 @@
+server:
+  port: 8085
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 查看日志
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/gec-auth?serverTimezone=Hongkong&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+    timeout: 1800000
+    password:
+    jedis:
+      pool:
+        max-active: 20 #最大连接数
+        max-wait: -1    #最大阻塞等待时间(负数表示没限制)
+        max-idle: 5    #最大空闲
+        min-idle: 0     #最小空闲
+  servlet:
+    multipart:
+      max-request-size: 100MB  # 最大请求大小
+      max-file-size: 300MB   # 最大文件大小
+#  # 阿里配置
+#  al:
+
+#    vod: # 视频
+#      regionId: cn-shanghai
+#      accessKeyId: LTAI5tEe3GfoNuQB1BvgfcrQ
+#      accessKeySecret: kla6dV0IN2DiemW3R5QLJTixGWEah9
+  # 阿里配置
+al:
+  oss: #存储
+#    endpoint: oss-cn-guangzhou.aliyuncs.com   # 域
+#    accessKeyId: LTAI5t8mhxLrrEuuEmUnEDoL  # 秘钥
+#    accessKeySecret: vwT8SjHQNHqCZSW418D15nuDjlUPHM # 秘钥
+#    bucketName: movie-zouwh  # 桶名
+#    url: https://movie-zouwh.oss-cn-guangzhou.aliyuncs.com  # 访问地址
+    #    oss: #存储
+     endpoint: oss-cn-beijing.aliyuncs.com  # 域
+     accessKeyId: LTAI5tEe3GfoNuQB1BvgfcrQ  # 秘钥
+     accessKeySecret: kla6dV0IN2DiemW3R5QLJTixGWEah9 # 秘钥
+     bucketName: vbet  # 桶名
+     url: https://vbet.oss-cn-beijing.aliyuncs.com # 访问地址
+  vod: # 视频
+    regionId: cn-shanghai
+    accessKeyId: LTAI5tEe3GfoNuQB1BvgfcrQ
+    accessKeySecret: kla6dV0IN2DiemW3R5QLJTixGWEah9
